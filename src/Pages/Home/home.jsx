@@ -1,8 +1,12 @@
+import { useEffect } from "react";
 import { BookCard } from "../../Components/Book Card/bookCard";
 import { useBooks } from "../../Context/booksContext";
 import home from "./home.module.css";
 
 export const Home = () => {
+  useEffect(()=>{
+    document.title="BookShelf"
+  },[])
   const { readingBooks, readBooks, willingToReadBooks} =
     useBooks();
   return (

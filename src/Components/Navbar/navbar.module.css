@@ -10,9 +10,11 @@
     border-right: 0.2rem solid black;
     min-width: 27vw;
     display: inline-block;
+    font-size: 3rem;
+    font-weight: 800;
 }
 .navLinks{
         text-decoration: none;
         color:black;
-       
+           
 }

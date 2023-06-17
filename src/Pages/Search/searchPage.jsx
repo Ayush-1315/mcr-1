@@ -1,9 +1,12 @@
-import { useState } from "react"
+import { useState,useEffect } from "react"
 import { BookCard } from "../../Components/Book Card/bookCard";
 import { useBooks } from "../../Context/booksContext";
 import explorer from "../../assets/search.jpg"
 import search from "./search.module.css";
 export const SearchPage=()=>{
+    useEffect(()=>{
+        document.title="Search"
+      },[])
     const [searchedBooks,setSearchBooks]=useState([]);
     const{books}=useBooks();
     const changeHandler=(e)=>{
@@ -18,7 +21,7 @@ export const SearchPage=()=>{
     <div className={search.results}>
         {searchedBooks.length===0?<div className={search.message}>
         <img src={explorer} alt="search" />
-        <h2>Search Something</h2>
+        <h2>Search Something...</h2>
         </div>:searchedBooks.map((books,index)=><BookCard key={index} {...books}/>)}
     </div>
     </>
